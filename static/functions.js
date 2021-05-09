@@ -13,8 +13,8 @@ const getRepositories = (language) => {
 };
 
 const generateRepoRowDOM = (repo) => {
-  console.log("[APP LOG] generateRepoRow");
-  console.log(repo);
+  // console.log("[APP LOG] generateRepoRow");
+  // console.log(repo);
 
   // set up empty table row which contains info about one repository
   const repoEl = document.createElement("tr");
@@ -42,8 +42,8 @@ const generateRepoRowDOM = (repo) => {
 };
 
 const renderReposTable = (repos) => {
-  console.log("[APP LOG] renderReposTable");
-  console.log(repos);
+  // console.log("[APP LOG] renderReposTable");
+  // console.log(repos);
 
   // clear any existing rendering
   document.querySelector("#repos").innerHTML = "";
@@ -94,10 +94,10 @@ const renderCounter = (repos) => {
   let issuesCounter = 0;
   repos.items.forEach((item) => {
     issuesCounter += item.open_issues_count;
-    console.log(`[APP LOG] open_issues_count: ${item.open_issues_count}`);
+    //console.log(`[APP LOG] open_issues_count: ${item.open_issues_count}`);
   });
 
-  console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
+  //console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
 
   // render counter on the HTML page
   counterEl.innerHTML = `Total open issues: ${issuesCounter}`;

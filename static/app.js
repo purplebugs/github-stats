@@ -14,7 +14,7 @@ let renderPage = () => {
       return repos;
     })
     .catch((err) => {
-      console.log(`Error: ${err}`);
+      console.error("Error rendering page", err);
     });
 };
 
