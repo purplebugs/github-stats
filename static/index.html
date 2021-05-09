@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Statistics</title>
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="styles/styles.css" rel="stylesheet" />
@@ -13,15 +12,23 @@
         <h2 class="header__subtitle">To do: put total issues counter here?</h2>
       </div>
     </header>
-    <div id="issues-counter"></div>
-    <select id="filter">
-      <option value="javascript">JavaScript</option>
-      <option value="java">Java</option>
-      <option value="php">PHP</option>
-      <option value="dart">Dart</option>
-      <option value="go">Go</option>
-    </select>
-    <div id="repos"></div>
+
+    <div class="container">
+      <span>
+        <label for="filter-by">Choose a language:</label>
+        <select id="filter" class="dropdown">
+          <option value="javascript">JavaScript</option>
+          <option value="java">Java</option>
+          <option value="php">PHP</option>
+          <option value="dart">Dart</option>
+          <option value="go">Go</option>
+        </select>
+      </span>
+
+      <span id="issues-counter"></span>
+    </div>
+
+    <div id="repos" class="container"></div>
     <script src="functions.js"></script>
     <script src="app.js"></script>
   </body>

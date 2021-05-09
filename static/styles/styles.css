@@ -1,3 +1,5 @@
+/* Generic */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,18 +9,22 @@
 body {
   color: #333333;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 a {
   color: #396684;
 }
 
+/* Container */
+
 .container {
   max-width: 60rem;
   margin: 0 auto;
   padding: 0 1.6rem;
 }
+
+/* Header */
 
 .header {
   background: #43799c;
@@ -34,4 +40,15 @@ a {
 .header__subtitle {
   font-size: 1.6rem;
   font-weight: 300;
+}
+
+/* Form Inputs */
+.dropdown {
+  border-radius: 0;
+  border: 1px solid #dedfe0;
+  background: white;
+  font-size: 1.4rem;
+  font-weight: 300;
+  height: 3rem;
+  margin-right: 0.8rem;
 }
