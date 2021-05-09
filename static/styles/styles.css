@@ -63,6 +63,20 @@ a {
   margin-right: 0.8rem;
 }
 
+/* Table */
+
+.container__table {
+  margin-top: 2rem;
+}
+
+.container__table td {
+  padding: 0.5rem;
+}
+
+.container__table tr:nth-child(even) {
+  background: #ccc;
+}
+
 /* Footer */
 footer {
   padding: 2rem 2rem;

@@ -51,6 +51,7 @@ const renderReposTable = (repos) => {
   // set up table header and assign values to headings
 
   const repoTableEl = document.createElement("table");
+  repoTableEl.classList.add("container__table");
 
   const repoTableHeaderRowEl = document.createElement("tr");
 
