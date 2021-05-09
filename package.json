@@ -1,0 +1,26 @@
+{
+  "name": "github-stats",
+  "version": "1.0.0",
+  "description": "Visualise github stats from the github Search API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purplebugs/github-stats.git"
+  },
+  "keywords": [
+    "github",
+    "statistics"
+  ],
+  "author": "Anita Lipsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/purplebugs/github-stats/issues"
+  },
+  "homepage": "https://github.com/purplebugs/github-stats#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
