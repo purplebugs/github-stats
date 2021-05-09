@@ -19,7 +19,7 @@ a {
 /* Container */
 
 .container {
-  max-width: 60rem;
+  max-width: 70rem;
   margin: 0 auto;
   padding: 0 1.6rem;
 }
@@ -40,6 +40,16 @@ a {
 .header__subtitle {
   font-size: 1.6rem;
   font-weight: 300;
+}
+
+/* Actions Bar */
+
+.actions {
+  max-width: 70rem;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #dedfe0;
+  padding: 0.8rem;
 }
 
 /* Form Inputs */
