@@ -52,6 +52,11 @@ a {
   padding: 0.8rem;
 }
 
+#issues-counter {
+  float: right;
+  margin-top: 1rem;
+}
+
 /* Form Inputs */
 .dropdown {
   border-radius: 0;
