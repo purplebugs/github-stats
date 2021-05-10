@@ -9,8 +9,8 @@
       function generateElasticsearch_bulk_POST_request() {
         getRepositories("", 100) // pass in empty string for parameter will select any language
           .then((repos) => {
-            console.log(repos);
-            console.log("[APP LOG] generating Elasticsearch post request");
+            //console.log(repos);
+            //console.log("[APP LOG] generating Elasticsearch post request");
 
             // Generate a request with the format
             // POST github_repositories/_bulk
@@ -33,7 +33,7 @@
               counter++;
             });
 
-            console.log(bulk_POST_request);
+            // console.log(bulk_POST_request);
             return bulk_POST_request;
           })
           .then((result) => {
