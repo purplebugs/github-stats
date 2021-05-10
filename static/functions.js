@@ -30,6 +30,7 @@ const generateRepoRowDOM = (repo) => {
   repoUrlEl.textContent = repo.html_url;
 
   const repoStarsEl = document.createElement("td");
+  repoStarsEl.setAttribute("nowrap", ""); // Ensure icons are shown horizontally if in eighties mode
 
   // render star rating with formatting depending on mode stored in local storage
   const mode = localStorage.getItem("mode");
@@ -128,7 +129,7 @@ const renderCounter = (repos) => {
     //console.log(`[APP LOG] open_issues_count: ${item.open_issues_count}`);
   });
 
-  console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
+  // console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
 
   // render counter on the HTML page
   // formatting depends on mode stored in local storage
