@@ -4,6 +4,12 @@
     <title>Github Statistics</title>
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <link id="styles" href="styles/styles.css" rel="stylesheet" />
+    <script>
+      const restorePageToDefaults = () => {
+        localStorage.clear();
+      };
+      window.onload = restorePageToDefaults;
+    </script>
     <script defer src="functions.js"></script>
     <script defer src="app.js"></script>
     <script defer>
@@ -14,8 +20,12 @@
 
         if (styleElAttribute.includes("styles.css")) {
           styleEl.setAttribute("href", "styles/eighties.css");
+
+          localStorage.setItem("mode", "eighties"); // certain page elements check local storage to render in correct mode
         } else if (styleElAttribute.includes("eighties.css")) {
           styleEl.setAttribute("href", "styles/styles.css");
+
+          localStorage.clear(); // certain page elements check local storage to render in correct mode
         } else {
           console.log(
             "[APP LOG] Unexpected style attribute - no style change will be applied"

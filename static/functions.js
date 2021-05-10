@@ -98,10 +98,33 @@ const renderCounter = (repos) => {
     //console.log(`[APP LOG] open_issues_count: ${item.open_issues_count}`);
   });
 
-  //console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
+  console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
 
   // render counter on the HTML page
-  counterEl.innerHTML = `Total open issues: ${issuesCounter}`;
+  const mode = localStorage.getItem("mode");
+  if (mode === "eighties") {
+    console.log("[APP LOG] render Star rating 80s version");
+
+    let issuesCounterEightiesMode = issuesCounter;
+    if (issuesCounterEightiesMode <= 5000) {
+      // small
+      issuesCounterEightiesMode = `🎷`;
+    } else if (
+      issuesCounterEightiesMode > 5000 &&
+      issuesCounterEightiesMode < 10000
+    ) {
+      // medium
+      issuesCounterEightiesMode = `🎷 🎷`;
+    } else if (issuesCounterEightiesMode >= 10000) {
+      // large
+      issuesCounterEightiesMode = `🎷 🎷 🎷`;
+    }
+
+    counterEl.innerHTML = `Total open issues: ${issuesCounterEightiesMode}`;
+  } else {
+    console.log("[APP LOG] render Star rating default verseion");
+    counterEl.innerHTML = `Total open issues: ${issuesCounter}`;
+  }
 
   return issuesCounter;
 };
