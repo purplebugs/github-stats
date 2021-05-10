@@ -61,8 +61,6 @@ const generateRepoRowDOM = (repo) => {
     repoStarsEl.textContent = starRating;
   }
 
-  //repoStarsEl.textContent = starRating;
-
   // generate the row DOM
   repoEl.appendChild(repoNameEl);
   repoEl.appendChild(repoDescriptionEl);

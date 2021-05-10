@@ -62,6 +62,13 @@ a {
   margin-top: 1rem;
 }
 
+#bonus {
+  text-align: center;
+  padding: 2rem 0;
+  background: #f7f7f7;
+  font-style: italic;
+}
+
 /* Form Inputs */
 .dropdown {
   border-radius: 0;
