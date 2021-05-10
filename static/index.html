@@ -3,15 +3,43 @@
   <head>
     <title>Github Statistics</title>
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="styles/styles.css" rel="stylesheet" />
+    <link id="styles" href="styles/styles.css" rel="stylesheet" />
     <script defer src="functions.js"></script>
     <script defer src="app.js"></script>
+    <script defer>
+      function toggleEightiesMode() {
+        const styleEl = document.querySelector("#styles");
+
+        const styleElAttribute = styleEl.getAttribute("href");
+
+        console.log(styleElAttribute);
+
+        if (styleElAttribute.includes("styles.css")) {
+          styleEl.setAttribute("href", "styles/eighties.css");
+        } else if (styleElAttribute.includes("eighties.css")) {
+          styleEl.setAttribute("href", "styles/styles.css");
+        } else {
+          console.log(
+            "[APP LOG] Unexpected style attribute - no style change will be applied"
+          );
+        }
+      }
+    </script>
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <h1 class="header__title">Github Statistics</h1>
-        <h2 class="header__subtitle">2021-05 Project by Anita Lipsky</h2>
+        <span>
+          <h1 class="header__title">Github Statistics</h1>
+          <h2 class="header__subtitle">
+            2021-05 Project by Anita Lipsky
+          </h2></span
+        >
+        <span
+          ><button id="toggle" onClick="toggleEightiesMode()">
+            Toggle 1980s retro mode
+          </button></span
+        >
       </div>
     </header>
 
@@ -36,16 +64,20 @@
 
     <footer>
       <div class="container">
-        <p>
-          View code on
-          <a href="https://github.com/purplebugs/github-stats">github</a>
-        </p>
-        <p>
-          View Anita's
-          <a href="https://www.linkedin.com/in/anita-lipsky-506360120/"
-            >Linkedin profile</a
-          >
-        </p>
+        <span>
+          <div>
+            View code on
+            <a href="https://github.com/purplebugs/github-stats">github</a> |
+            View Anita's
+            <a href="https://www.linkedin.com/in/anita-lipsky-506360120/"
+              >Linkedin profile</a
+            >
+          </div></span
+        >
+        <span id="image"
+          ><img src=images/back-to-the-80s-300x156.png width="300"
+          height="156"></span
+        >
       </div>
     </footer>
   </body>

@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #396684;
+  color: #4c3786;
 }
 
 /* Container */
@@ -27,12 +27,13 @@ a {
 #toggle,
 #image {
   float: right;
+  background-color: white;
 }
 
 /* Header */
 
 .header {
-  background: #43799c;
+  background: #4c3786;
   color: white;
   padding: 1.6rem 0;
 }
