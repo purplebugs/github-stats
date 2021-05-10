@@ -7,7 +7,7 @@
     <script defer src="functions.js"></script>
     <script defer>
       function generateElasticsearch_bulk_POST_request() {
-        getRepositories("") // pass in empty string for parameter will select any language
+        getRepositories("", 100) // pass in empty string for parameter will select any language
           .then((repos) => {
             console.log(repos);
             console.log("[APP LOG] generating Elasticsearch post request");
@@ -36,6 +36,14 @@
             console.log(bulk_POST_request);
             return bulk_POST_request;
           })
+          .then((result) => {
+            // clear any existing rendering
+            const resultEl = document.querySelector("#result");
+            resultEl.innerHTML = "";
+
+            // render result
+            resultEl.innerHTML = result;
+          })
           .catch((err) => {
             console.error("Error rendering page", err);
           });
@@ -46,26 +54,32 @@
     <header class="header">
       <div class="container">
         <span>
-          <h1 class="header__title">Generate</h1>
+          <h1 class="header__title">Generate POST</h1>
           <h2 class="header__subtitle">
             2021-05 Project by Anita Lipsky
           </h2></span
         >
         <span
           ><button
-            id="toggle"
+            id="generateRequest"
             onClick="generateElasticsearch_bulk_POST_request()"
           >
-            Click to generate Elasticsearch bulk POST request
+            generate Elasticsearch bulk POST request
           </button></span
         >
       </div>
     </header>
 
     <main>
-      <div class="actions">Hi there - actions section</div>
+      <div class="actions">
+        <ol>
+          <li>Click button to generate POST request</li>
+          <li>Wait a few seconds</li>
+          <li>Copy/paste the result below into Kibana devtools</li>
+        </ol>
+      </div>
 
-      <div id="repos" class="container">main section of the page</div>
+      <div id="result" class="container"></div>
     </main>
 
     <footer>

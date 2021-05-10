@@ -1,8 +1,8 @@
 const baseURL = "https://api.github.com/search/repositories";
 
-const getRepositories = (language) => {
+const getRepositories = (language, perPage = 10) => {
   return fetch(
-    `${baseURL}?q=language:${language}&sort=stars&order=desc&per_page=10`
+    `${baseURL}?q=language:${language}&sort=stars&order=desc&per_page=${perPage}`
   ).then((response) => {
     if (response.status === 200 || response.status === 304) {
       return response.json();

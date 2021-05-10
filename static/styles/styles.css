@@ -18,12 +18,18 @@ a {
 
 /* Container */
 
+#result {
+  font-family: monospace;
+  background-color: yellowgreen;
+}
+
 .container {
   max-width: 70rem;
   margin: 0 auto;
   padding: 0 1.6rem;
 }
 
+#generateRequest,
 #toggle,
 #image {
   float: right;
