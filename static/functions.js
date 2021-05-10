@@ -30,7 +30,37 @@ const generateRepoRowDOM = (repo) => {
   repoUrlEl.textContent = repo.html_url;
 
   const repoStarsEl = document.createElement("td");
-  repoStarsEl.textContent = repo.stargazers_count;
+
+  // render star rating with formatting depending on mode stored in local storage
+  const mode = localStorage.getItem("mode");
+  let starRating = repo.stargazers_count;
+
+  if (mode === "eighties") {
+    // eighties mode is toggled
+    //console.log("[APP LOG] eightes mode rollers");
+
+    let starRatingEightiesMode = starRating;
+    if (starRatingEightiesMode <= 10000) {
+      // small
+      starRatingEightiesMode = `🛼`;
+    } else if (
+      starRatingEightiesMode > 10000 &&
+      starRatingEightiesMode < 100000
+    ) {
+      // medium
+      starRatingEightiesMode = `🛼 🛼`;
+    } else if (starRatingEightiesMode >= 100000) {
+      // large
+      starRatingEightiesMode = `🛼 🛼 🛼`;
+    }
+
+    repoStarsEl.textContent = starRatingEightiesMode;
+  } else {
+    // default mode
+    repoStarsEl.textContent = starRating;
+  }
+
+  //repoStarsEl.textContent = starRating;
 
   // generate the row DOM
   repoEl.appendChild(repoNameEl);
@@ -101,10 +131,11 @@ const renderCounter = (repos) => {
   console.log(`[APP LOG] issuesCounter: ${issuesCounter}`);
 
   // render counter on the HTML page
+  // formatting depends on mode stored in local storage
   const mode = localStorage.getItem("mode");
-  if (mode === "eighties") {
-    console.log("[APP LOG] render Star rating 80s version");
 
+  if (mode === "eighties") {
+    // eighties mode is toggled
     let issuesCounterEightiesMode = issuesCounter;
     if (issuesCounterEightiesMode <= 5000) {
       // small
@@ -122,7 +153,7 @@ const renderCounter = (repos) => {
 
     counterEl.innerHTML = `Total open issues: ${issuesCounterEightiesMode}`;
   } else {
-    console.log("[APP LOG] render Star rating default verseion");
+    // default mode
     counterEl.innerHTML = `Total open issues: ${issuesCounter}`;
   }
 
