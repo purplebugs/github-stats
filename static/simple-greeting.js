@@ -27,6 +27,7 @@ export class SimpleGreeting extends LitElement {
         src="./images/rollerskate-white-transparent-background.png"
         width=${this.percent}
         height=${this.percent}
+        align="middle"
       />
       ${this.name}
     </span>`;

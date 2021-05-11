@@ -138,19 +138,19 @@ const renderCounter = (repos) => {
     let issuesCounterEightiesMode = issuesCounter;
     if (issuesCounterEightiesMode <= 5000) {
       // small
-      issuesCounterEightiesMode = `🎷`;
+      issuesCounterEightiesMode = `<rating-counter counter="1"></rating-counter>`;
     } else if (
       issuesCounterEightiesMode > 5000 &&
       issuesCounterEightiesMode < 10000
     ) {
       // medium
-      issuesCounterEightiesMode = `🎷 🎷`;
+      issuesCounterEightiesMode = `<rating-counter counter="2"></rating-counter>`;
     } else if (issuesCounterEightiesMode >= 10000) {
       // large
-      issuesCounterEightiesMode = `🎷 🎷 🎷`;
+      issuesCounterEightiesMode = `<rating-counter counter="3"></rating-counter>`;
     }
 
-    counterEl.innerHTML = `Total open issues: ${issuesCounterEightiesMode}`;
+    counterEl.innerHTML = `Total open issues: ${issuesCounterEightiesMode} `;
   } else {
     // default mode
     counterEl.innerHTML = `Total open issues: ${issuesCounter}`;
