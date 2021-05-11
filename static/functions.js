@@ -43,22 +43,22 @@ const generateRepoRowDOM = (repo) => {
     let starRatingEightiesMode = starRating;
     if (starRatingEightiesMode <= 10000) {
       // small
-      starRatingEightiesMode = `🛼`;
+      starRatingEightiesMode = `<rating-counter counter="1" rating="🛼"></rating-counter>`;
     } else if (
       starRatingEightiesMode > 10000 &&
       starRatingEightiesMode < 100000
     ) {
       // medium
-      starRatingEightiesMode = `🛼 🛼`;
+      starRatingEightiesMode = `<rating-counter counter="2" rating="🛼"></rating-counter>`;
     } else if (starRatingEightiesMode >= 100000) {
       // large
-      starRatingEightiesMode = `🛼 🛼 🛼`;
+      starRatingEightiesMode = `<rating-counter counter="3" rating="🛼"></rating-counter>`;
     }
 
-    repoStarsEl.textContent = starRatingEightiesMode;
+    repoStarsEl.innerHTML = starRatingEightiesMode;
   } else {
     // default mode
-    repoStarsEl.textContent = starRating;
+    repoStarsEl.innerHTML = starRating;
   }
 
   // generate the row DOM
