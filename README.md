@@ -10,6 +10,6 @@ Personal exercise to visualise statistics from the github Search API https://doc
 
 ## Start app
 
-1. Start the app: `node server.js`
+1. Start the app: `npm start`
 
 2. Navigate to [http://localhost:3030/](http://localhost:3030/)
