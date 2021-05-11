@@ -138,16 +138,16 @@ const renderCounter = (repos) => {
     let issuesCounterEightiesMode = issuesCounter;
     if (issuesCounterEightiesMode <= 5000) {
       // small
-      issuesCounterEightiesMode = `<rating-counter counter="1"></rating-counter>`;
+      issuesCounterEightiesMode = `<rating-counter counter="1" rating="🎷"></rating-counter>`;
     } else if (
       issuesCounterEightiesMode > 5000 &&
       issuesCounterEightiesMode < 10000
     ) {
       // medium
-      issuesCounterEightiesMode = `<rating-counter counter="2"></rating-counter>`;
+      issuesCounterEightiesMode = `<rating-counter counter="2" rating="🎷"></rating-counter>`;
     } else if (issuesCounterEightiesMode >= 10000) {
       // large
-      issuesCounterEightiesMode = `<rating-counter counter="3"></rating-counter>`;
+      issuesCounterEightiesMode = `<rating-counter counter="3" rating="🎷"></rating-counter>`;
     }
 
     counterEl.innerHTML = `Total open issues: ${issuesCounterEightiesMode} `;

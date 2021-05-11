@@ -18,21 +18,23 @@ export class RatingCounter extends LitElement {
 
   constructor() {
     super();
-    this.rating = "";
+    this.rating = "⭐️ ";
     this.counter = 0;
   }
 
   render() {
+    let output = this.rating;
+
     if (this.counter === "1") {
-      this.rating = "🎷";
+      output = `${this.rating}`;
     } else if (this.counter === "2") {
-      this.rating = "🎷 🎷";
+      output = `${this.rating} ${this.rating}`;
     } else if (this.counter === "3") {
-      this.rating = "🎷 🎷 🎷 ";
+      output = `${this.rating} ${this.rating} ${this.rating}`;
     } else {
-      this.rating = "No rating";
+      output = "No rating";
     }
-    return html`<span> ${this.rating} </span>`;
+    return html`<span> ${output} </span>`;
   }
 }
 
