@@ -18,7 +18,7 @@ export class RatingCounter extends LitElement {
 
   constructor() {
     super();
-    this.rating = "⭐️ ";
+    this.rating = "⭐️";
     this.counter = 0;
   }
 
